@@ -593,7 +593,7 @@ p { font-size: 1rem; line-height: 1.65; margin: 0; color: var(--muted); max-widt
   .hero__illustration { animation: none; }
 }
 
-/* Estilos para el Dropdown del Menú de Navegación */
+/* Estilos para el Menú Desplegable (Dropdown) de Tienda */
 .nav__dropdown {
   position: relative;
   display: inline-block;
@@ -610,71 +610,98 @@ p { font-size: 1rem; line-height: 1.65; margin: 0; color: var(--muted); max-widt
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  padding: 10px 0;
-  min-width: 170px;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--primary-dark) !important; /* Fondo verde oscuro premium */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(21, 50, 37, 0.24);
+  padding: 8px 0;
+  min-width: 190px;
   display: none;
   z-index: 100;
-  animation: dropdownFadeIn 0.25s ease;
+  animation: dropdownFadeIn 0.2s ease-out;
 }
 
+/* Puente invisible para evitar que el menú desaparezca al mover el mouse en el espacio vacío */
+.nav__dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+/* Enlaces del Dropdown en todas las pantallas */
 .nav__dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text) !important;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  display: block !important;
+  padding: 10px 20px !important;
+  font-size: 1rem !important; /* Mismo tamaño del menú del header */
+  font-weight: 700 !important;
+  font-family: "Cabin Condensed", system-ui, sans-serif !important; /* Misma fuente del header */
+  color: #ffffff !important; /* Texto blanco de alto contraste */
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  border-bottom: 0 !important; /* Quitar cualquier borde heredado */
+  text-align: left !important;
 }
 
 .nav__dropdown-menu a:hover {
-  background: rgba(38, 77, 59, 0.06);
-  color: var(--accent) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--accent) !important; /* Texto naranja en hover */
+  padding-left: 24px !important; /* Animación sutil de desplazamiento */
 }
 
-/* Hover en pantallas de escritorio */
-@media (min-width: 721px) {
+/* Mostrar dropdown en desktop y tablet con hover */
+@media (min-width: 769px) {
   .nav__dropdown:hover .nav__dropdown-menu {
     display: block;
   }
 }
 
 @keyframes dropdownFadeIn {
-  from { opacity: 0; transform: translateX(-50%) translateY(15px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(10px); }
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(6px); }
 }
 
-/* Soporte responsive en móvil */
-@media (max-width: 720px) {
+/* Soporte completo para tablets, móviles grandes y pequeños (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Hacemos que el dropdown actúe como un acordeón premium en móvil/tablet */
   .nav__dropdown-menu {
-    position: static;
-    transform: none;
-    box-shadow: none;
-    border: 0;
-    background: transparent;
-    padding: 0 0 0 15px;
-    display: none;
-    animation: none;
-    min-width: auto;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    background: var(--primary) !important; /* Fondo verde un poco más claro para distinguir el submenú */
+    padding: 6px 0 !important;
+    display: none !important;
+    animation: none !important;
+    min-width: 100% !important;
+    border-radius: 12px !important;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
   
   .nav__dropdown.is-active .nav__dropdown-menu {
-    display: block;
+    display: block !important;
   }
   
   .nav__dropdown-toggle {
     padding: 14px;
     border-bottom: 1px solid var(--border);
     justify-content: space-between;
+    width: 100%;
   }
   
   .nav__dropdown-menu a {
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(25, 58, 45, 0.08) !important;
+    padding: 12px 20px !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .nav__dropdown-menu a:hover {
+    padding-left: 24px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
   }
 }

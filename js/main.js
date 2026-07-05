@@ -32,14 +32,28 @@ if (tickerTrack && tickerGroup) {
   window.addEventListener('resize', updateTickerWidth);
 }
 
-// Lógica para abrir/cerrar dropdowns en móvil
+// Lógica para abrir/cerrar dropdowns en móviles y tabletas
 const dropdowns = document.querySelectorAll('.nav__dropdown');
 dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.nav__dropdown-toggle');
   toggle?.addEventListener('click', (e) => {
-    if (window.innerWidth <= 720) {
-      e.preventDefault();
-      dropdown.classList.toggle('is-active');
+    if (window.innerWidth <= 768) {
+      const menu = dropdown.querySelector('.nav__dropdown-menu');
+      const isVisible = window.getComputedStyle(menu).display !== 'none';
+      
+      // Si el menú está cerrado, prevenimos navegación y lo abrimos
+      if (!isVisible) {
+        e.preventDefault();
+        dropdowns.forEach(d => d.classList.remove('is-active'));
+        dropdown.classList.add('is-active');
+      }
     }
   });
+});
+
+// Cerrar desplegables si se hace clic fuera de ellos
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav__dropdown')) {
+    dropdowns.forEach(d => d.classList.remove('is-active'));
+  }
 });
