@@ -6,7 +6,7 @@
  */
 
 // CONFIGURACIÓN - Reemplaza con tus datos
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwgoDj2YfSqDexxPPu2HDCr8Ibw2sDtbcdxZ24l69duYbGsfLJGkVHuGXa-ETxjr7c/exec"; // URL de tu Google Apps Script Web App
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1DSh97C7dDjoNUUPOZkuKtKJCYi-utiErGRDB5s3p23bqx4n-MWU53TTzvfN2Vbl-/exec"; // URL de tu Google Apps Script Web App
 const WHATSAPP_PHONE = "51999999999"; // Reemplaza con tu número de WhatsApp (código de país + número, sin el + ni espacios)
 const DEFAULT_MONEDA = "S/."; // Moneda por defecto si no viene especificada en la hoja
 
