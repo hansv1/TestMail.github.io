@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;600;700&family=Calistoga&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="stylesheet" href="../css/store.css" />
+  <link rel="stylesheet" href="../css/styles.css?v=2.0" />
+  <link rel="stylesheet" href="../css/store.css?v=2.0" />
 </head>
 <body>
   <div class="topbar" data-alert>
@@ -31,10 +31,17 @@
 
       <nav class="nav__menu" data-menu>
         <a href="../index.html">Inicio</a>
-        <a href="../tienda.html">Tienda</a>
+        <div class="nav__dropdown">
+          <a href="../tienda.html" class="nav__dropdown-toggle">Tienda <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i></a>
+          <div class="nav__dropdown-menu">
+            <a href="windowsoffice.html">Windows y Office</a>
+            <a href="programas.html">Programas</a>
+            <a href="streaming.html">Streaming</a>
+          </div>
+        </div>
         <a href="../gestion-codigos.html">Gestión de Códigos</a>
         <a href="../correo-temporal.html">Correo Temporal</a>
-        <a href="#">Streaming Manager</a>
+        <a href="https://manager.hansrj.me/">Streaming Manager</a>
       </nav>
     </div>
   </header>
@@ -81,7 +88,7 @@
             <div class="container">
                 <div class="featured-services">
                     <!-- Windows y Office -->
-                    <a class="feature-panel" href="../Tienda/windowsoffice.html" aria-label="Ver categoría Windows y Office">
+                    <a class="feature-panel" href="../tienda/windowsoffice.html" aria-label="Ver categoría Windows y Office">
                         <div class="feature-panel__copy">
                             <p class="eyebrow">Licencias originales</p>
                             <h3>Windows y Office</h3>
@@ -98,7 +105,7 @@
                     </a>
 
                     <!-- Programas -->
-                    <a class="feature-panel" href="../Tienda/programas.html" aria-label="Ver categoría Programas">
+                    <a class="feature-panel" href="../tienda/programas.html" aria-label="Ver categoría Programas">
                         <div class="feature-panel__copy">
                             <p class="eyebrow">Herramientas profesionales</p>
                             <h3>Programas</h3>
@@ -115,7 +122,7 @@
                     </a>
 
                     <!-- Streaming -->
-                    <a class="feature-panel" href="../Tienda/streaming.html" aria-label="Ver categoría Streaming">
+                    <a class="feature-panel" href="../tienda/streaming.html" aria-label="Ver categoría Streaming">
                         <div class="feature-panel__copy">
                             <p class="eyebrow">Entretenimiento</p>
                             <h3>Streaming</h3>
@@ -171,14 +178,14 @@
           <p>Escríbenos directamente a través de cualquiera de nuestros canales de mensajería rápida.</p>
         </div>
         <div class="contact-actions" aria-label="Canales de contacto">
-          <a class="contact-button contact-button--whatsapp" href="https://wa.me/" target="_blank" rel="noreferrer">
+          <a class="contact-button contact-button--whatsapp" href="https://wa.me/51965485348" target="_blank" rel="noreferrer">
             <span class="contact-button__icon"><i class="fab fa-whatsapp"></i></span>
             <span>
               <strong>WhatsApp</strong>
               <small>Atención directa</small>
             </span>
           </a>
-          <a class="contact-button contact-button--telegram" href="https://t.me/" target="_blank" rel="noreferrer">
+          <a class="contact-button contact-button--telegram" href="https://t.me/hans_hns" target="_blank" rel="noreferrer">
             <span class="contact-button__icon"><i class="fab fa-telegram-plane"></i></span>
             <span>
               <strong>Telegram</strong>
@@ -201,9 +208,10 @@
       </div>
       <div>
         <h3>Servicios</h3>
-        <a href="#servicios">Tienda</a>
-        <a href="#servicios">Gestión de Códigos</a>
-        <a href="#servicios">Correo Temporal</a>
+        <a href="../tienda.html">Tienda</a>
+        <a href="../gestion-codigos.html">Gestión de Códigos</a>
+        <a href="../correo-temporal.html">Correo Temporal</a>
+        <a href="https://manager.hansrj.me/">Streaming Manager</a>
       </div>
       <div>
         <h3>Información</h3>
@@ -213,14 +221,14 @@
       </div>
       <div>
         <h3>Síguenos</h3>
-        <a href="https://t.me/" target="_blank" rel="noreferrer">Telegram</a>
-        <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="https://t.me/hans_hns" target="_blank" rel="noreferrer">Telegram</a>
+        <a href="https://wa.me/51965485348" target="_blank" rel="noreferrer">WhatsApp</a>
       </div>
     </div>
     <div class="container footer__bottom">© 2025 HANS WEB - Desarrollado por @romel.jeans</div>
   </footer>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/store.js"></script>
+  <script src="../js/main.js?v=2.0"></script>
+  <script src="../js/store.js?v=2.0"></script>
 </body>
 </html>

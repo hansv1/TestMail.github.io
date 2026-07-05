@@ -7,7 +7,7 @@
 
 // CONFIGURACIÓN - Reemplaza con tus datos
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1DSh97C7dDjoNUUPOZkuKtKJCYi-utiErGRDB5s3p23bqx4n-MWU53TTzvfN2Vbl-/exec"; // URL de tu Google Apps Script Web App
-const WHATSAPP_PHONE = "51999999999"; // Reemplaza con tu número de WhatsApp (código de país + número, sin el + ni espacios)
+const WHATSAPP_PHONE = "51965485348"; // Reemplaza con tu número de WhatsApp (código de país + número, sin el + ni espacios)
 const DEFAULT_MONEDA = "S/."; // Moneda por defecto si no viene especificada en la hoja
 
 // Función para convertir enlaces de compartir de Google Drive a URLs de imagen directas
@@ -91,27 +91,6 @@ function injectUIComponents() {
   
   if (!isStorePage) return;
 
-  // A. Inyectar el botón del carrito en el header (junto al menú de navegación)
-  const navMenu = document.querySelector('[data-menu]');
-  if (navMenu) {
-    const cartBtnContainer = document.createElement("div");
-    cartBtnContainer.className = "nav__cart-btn-wrapper";
-    cartBtnContainer.style.display = "inline-flex";
-    cartBtnContainer.style.alignItems = "center";
-    cartBtnContainer.style.marginLeft = "12px";
-
-    const cartNavBtn = document.createElement("button");
-    cartNavBtn.type = "button";
-    cartNavBtn.className = "nav__cart-btn";
-    cartNavBtn.innerHTML = `
-      <i class="fas fa-shopping-cart"></i>
-      <span>Carrito</span>
-      <span class="nav__cart-badge" id="nav-cart-badge">0</span>
-    `;
-    cartNavBtn.addEventListener("click", () => openCart());
-    cartBtnContainer.appendChild(cartNavBtn);
-    navMenu.appendChild(cartBtnContainer);
-  }
 
   // B. Inyectar el botón flotante del carrito
   const floatingBtn = document.createElement("button");

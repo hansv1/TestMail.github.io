@@ -7,7 +7,8 @@ menuToggle?.addEventListener('click', () => {
 });
 
 menu?.addEventListener('click', (event) => {
-  if (event.target.matches('a')) {
+  const link = event.target.closest('a');
+  if (link && !link.classList.contains('nav__dropdown-toggle')) {
     menu.classList.remove('is-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
   }
