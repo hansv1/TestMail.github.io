@@ -31,3 +31,15 @@ if (tickerTrack && tickerGroup) {
   updateTickerWidth();
   window.addEventListener('resize', updateTickerWidth);
 }
+
+// Lógica para abrir/cerrar dropdowns en móvil
+const dropdowns = document.querySelectorAll('.nav__dropdown');
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.nav__dropdown-toggle');
+  toggle?.addEventListener('click', (e) => {
+    if (window.innerWidth <= 720) {
+      e.preventDefault();
+      dropdown.classList.toggle('is-active');
+    }
+  });
+});

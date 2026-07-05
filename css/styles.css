@@ -592,3 +592,89 @@ p { font-size: 1rem; line-height: 1.65; margin: 0; color: var(--muted); max-widt
 @media (prefers-reduced-motion: reduce) {
   .hero__illustration { animation: none; }
 }
+
+/* Estilos para el Dropdown del Menú de Navegación */
+.nav__dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 10px 0;
+  min-width: 170px;
+  display: none;
+  z-index: 100;
+  animation: dropdownFadeIn 0.25s ease;
+}
+
+.nav__dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text) !important;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav__dropdown-menu a:hover {
+  background: rgba(38, 77, 59, 0.06);
+  color: var(--accent) !important;
+}
+
+/* Hover en pantallas de escritorio */
+@media (min-width: 721px) {
+  .nav__dropdown:hover .nav__dropdown-menu {
+    display: block;
+  }
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(15px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(10px); }
+}
+
+/* Soporte responsive en móvil */
+@media (max-width: 720px) {
+  .nav__dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: 0;
+    background: transparent;
+    padding: 0 0 0 15px;
+    display: none;
+    animation: none;
+    min-width: auto;
+  }
+  
+  .nav__dropdown.is-active .nav__dropdown-menu {
+    display: block;
+  }
+  
+  .nav__dropdown-toggle {
+    padding: 14px;
+    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+  }
+  
+  .nav__dropdown-menu a {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(25, 58, 45, 0.08) !important;
+  }
+}

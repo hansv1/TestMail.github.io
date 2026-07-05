@@ -1,4 +1,5 @@
 /* CSS para Catálogo Dinámico, Carrito y Modal - HANS WEB */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 
 /* 1. Contenedor y Grid de Productos */
 .products-container {
@@ -41,8 +42,26 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: 1fr;
   gap: 28px;
+}
+
+@media (min-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .products-loading, .products-empty {
@@ -170,6 +189,8 @@
   color: var(--text);
   font-size: 1.35rem;
   line-height: 1.15;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .product-card__desc {
@@ -207,7 +228,8 @@
 
 .price--current {
   font-size: 1.4rem;
-  font-family: "Calistoga", Georgia, serif;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 800;
   color: var(--text);
 }
 
@@ -421,6 +443,8 @@
   line-height: 1.1;
   color: var(--text);
   margin: 0;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .store-details__price {
@@ -589,7 +613,8 @@
 
 .cart-drawer__title {
   margin: 0;
-  font-family: "Calistoga", Georgia, serif;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   color: var(--text);
   display: flex;
@@ -772,7 +797,8 @@
 }
 
 .checkout-form__title {
-  font-family: "Calistoga", Georgia, serif;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 700;
   font-size: 1.15rem;
   margin: 0 0 4px;
   color: var(--text);
@@ -841,7 +867,8 @@
 }
 
 .cart-summary-row--total span:last-child {
-  font-family: "Calistoga", Georgia, serif;
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 800;
 }
 
 .btn-checkout {
